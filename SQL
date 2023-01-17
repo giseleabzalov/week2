@@ -1,0 +1,87 @@
+CREATE TABLE users (
+    ID INT Primary Key auto_increment not null,
+    Store_ID CHAR(10),
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    gender VARCHAR(20),
+    email VARCHAR(50),
+    birthday CHAR(10),
+    phone VARCHAR(20)  
+);
+
+INSERT INTO users(ID, Store_ID, first_name, last_name, gender, email, birthday, phone) values ("1", "bcc91" "Gisele", "Abzalov", "F", "gisele.abzalov@gmail.com", "1983/11/30", "718-536-8976" );
+
+INSERT INTO users values ("2", "bcc91","Gisele","Abzalov","F","gisele.abzalov@gmail.com","1983/11/30","718-536-8976");
+
+INSERT INTO users value ("3", "bcc91", "John", "Summit", "M", "john.summit@yahoo.com", "1980/05/09","561-389-7654");
+
+INSERT INTO users value ("4", "bcc91", "Maria", "Vinci", "F", "maryv@gmail.com", "1990/03/03", "347-589-6543");
+
+SELECT * FROM users;
+
+SELECT COUNT(*) FROM users;
+
+SELECT COUNT(email) FROM users;
+
+SELECT DISTINCT email FROM users;
+
+SELECT first_name, last_name, email FROM users;
+
+SELECT * FROM users WHERE gender="M";
+
+SELECT * FROM users WHERE id >=3;
+
+UPDATE users SET first_name = "Marya" WHERE ID=4;
+
+UPDATE users SET Store_ID = "bcc92" WHERE ID="3";
+
+UPDATE users SET first_name = "Jiho" WHERE id = "2";
+
+\c 
+
+DELETE FROM users WHERE Store_ID="bcc";
+
+SELECT * FROM users ORDER BY birthday;
+
+start transaction;
+rollback;
+commit;
+
+trancate - removes values from database DON'T USE
+drop tables - destroys database DON'T USE
+
+
+2. Create a table of 3 of your favorite television shows, including the name of the show, favorite actor/actress, where it plays (netflix, cable, etc.), and the genre.
+- Run a query to print all of the show names.
+3. Create a table of your favorite actor/actress from each tv show chosen. Include his or her first name, last name, tv show, and name of character played.
+-Run a query to print the character names.
+
+CREATE TABLE shows (
+    Show_ID INT Primary Key not null auto_increment,
+    show_name VARCHAR (50),
+    actor_first_name VARCHAR (50),
+    actor_last_name VARCHAR (50),
+    character_played VARCHAR (50),
+    where_plays VARCHAR (20),
+    show_genre VARCHAR (30)
+);
+
+CREATE TABLE actor (
+    ID INT Primary Key not null auto_increment,
+    show_name VARCHAR (50),
+    actor_first_name VARCHAR (50),
+    actor_last_name VARCHAR (50),
+    character_played VARCHAR (50)
+);
+INSERT INTO actor values ("1", "Breaking Bad", "Bryan", "Cranston", "Walter White");
+
+INSERT INTO actor values ("2", "Game of Thrones", "Maisie", "Williams", "Arya Stark");
+
+INSERT INTO actor value ("3", "Sex and the City", "Kim", "Cattrall", "Samantha Jones");
+
+SELECT character_played FROM actor;
+
+
+
+
+
