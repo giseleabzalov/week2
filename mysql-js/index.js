@@ -23,4 +23,4 @@ db.query("SELECT * FROM users", (err, results) => {
     if(err) console.log('ERROR -> ', err);
     console.table(results);
 });
-
+db.end();
